@@ -36,7 +36,7 @@ public class ProducerFastStart {
             对于可重试异常，如果配置了retries参数，只要在规定的次数（默认为0）内自动恢复了就不会抛出异常。
         */
         properties.put(ProducerConfig.RETRIES_CONFIG, 10);
-        //指定自定义的生产者拦截器
+        //指定自定义的生产者拦截器，如果是拦截器链使用","隔开
         properties.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, ProducerInterceptorPrefix.class.getName());
 
         return properties;
